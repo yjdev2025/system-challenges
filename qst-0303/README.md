@@ -56,7 +56,7 @@ graph LR
 例えばコンテナ起動のためのスクリプト`docker-up.sh`を作成し、その中に以下のような内容を記述します。
 
 ```
-!#/bin/bash
+#!/bin/bash
 docker compose up --build
 ```
 
