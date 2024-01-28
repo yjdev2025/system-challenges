@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  nginx:
+    container_name: nginx
+    build:
+      ./nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/aaa:/usr/share/nginx/aaa
+      - ./nginx/bbb:/usr/share/nginx/bbb
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    extra_hosts:
+      - aaa.example.com:127.0.0.1
+      - bbb.example.com:127.0.0.1
