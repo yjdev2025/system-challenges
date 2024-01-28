@@ -1,0 +1,13 @@
+services:
+  reverse-proxy:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./conf.d:/etc/nginx/conf.d/
+    networks:
+      - reverse-proxy-network
+
+networks:
+  reverse-proxy-network:
+    external: true

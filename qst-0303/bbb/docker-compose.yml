@@ -1,0 +1,14 @@
+services:
+  app:
+    image: nginx:alpine
+    volumes:
+      - ./public:/usr/share/nginx/html
+    networks:
+      default:
+      reverse-proxy-network:
+        aliases:
+          - bbb-container
+
+networks:
+  reverse-proxy-network:
+    external: true
