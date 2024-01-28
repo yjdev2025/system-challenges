@@ -19,7 +19,7 @@ try{
     if( strcmp($argv[1], "list-users") == 0 ){
         $records = $db -> query('SELECT * FROM users');
         while($record = $records->fetch()){
-            echo $record['name']. " ". $record['age']. " ". str_repeat("*",strlen($record['password'])) . "\n";
+            echo $record['id']. " " .$record['name']. " ". $record['age']. " ". str_repeat("*",strlen($record['password'])) . "\n";
         }
     }
     }
